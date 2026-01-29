@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+</head>
+<body>
+  <div id="static-check" style="padding:12px;background:#f6f8fa;border-bottom:1px solid #eee">Static: Frontend HTML served</div>
+  <div id="root"></div>
+  <script>
+    // Surface uncaught errors on the page for easier debugging
+    window.addEventListener('error', function (e) {
+      const el = document.getElementById('static-check');
+      if (el) el.textContent = 'Runtime Error: ' + (e.error && e.error.message ? e.error.message : e.message);
+    });
+    window.addEventListener('unhandledrejection', function (e) {
+      const el = document.getElementById('static-check');
+      if (el) el.textContent = 'Promise Rejection: ' + (e.reason && e.reason.message ? e.reason.message : String(e.reason));
+    });
+  </script>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
