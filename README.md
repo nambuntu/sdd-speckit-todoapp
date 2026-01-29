@@ -1,34 +1,85 @@
-# Simple Todo List Application
+# Simple Todo List Application  
+**Built with Spec-Driven Development (SDD)**
 
-A minimal todo list application with React frontend and Node.js backend. Create, view, and manage todos in a single-page app with in-memory storage.
+This project is a deliberately simple Todo List application, built with **React + Vite** on the frontend and **Node.js** on the backend — but the *real focus* is not the app itself.
 
-## Features
+The goal of this repository is to **demonstrate Spec-Driven Development (SDD)** in practice.
 
-- ✅ Create new todos
-- ✅ View todo list in real-time
-- ✅ Mark todos complete/incomplete
-- ✅ Delete todos
-- ✅ No authentication required
-- ✅ No database setup needed
-- ✅ Runs on localhost
+Using **GitHub Speckit** together with **GitHub Copilot**, the application was designed, specified, and implemented **from explicit specs**, producing a full set of **project artefacts and documentation alongside the code** — not after the fact.
+
+⏱ **Total build time: ~30 minutes**  
+That’s roughly the same time it would take to hand-code a similar todo app —  
+**the difference is that SDD leaves you with “gold” documentation instead of tribal knowledge.**
+
+---
+
+## Why This Project Exists
+
+Most demo apps show *how to code*.  
+This project shows **how to think, specify, and document while coding**.
+
+With Spec-Driven Development:
+
+- Requirements are written before implementation
+- Interfaces and contracts are explicit
+- Documentation emerges *with* the code, not as a chore later
+- AI assistants work from specs, not vague prompts
+
+The result is:
+
+> The same amount of coding time, but vastly better project clarity and artefacts.
+
+---
+
+## What SDD Produced (Beyond the Code)
+
+Alongside the working application, SDD helped generate and refine:
+
+- 📄 Clear feature and behavior specifications  
+- 📄 API contracts between frontend and backend  
+- 📄 Consistent project structure and boundaries  
+- 📄 Living documentation that matches the implementation  
+
+These artefacts are the **real output** of the exercise.
+
+---
+
+## Application Overview
+
+A minimal single-page Todo List application with in-memory storage.
+
+### Features
+
+- ✅ Create new todos  
+- ✅ View todos in real time  
+- ✅ Mark todos as complete / incomplete  
+- ✅ Delete todos  
+- ✅ No authentication  
+- ✅ No database required  
+- ✅ Runs entirely on localhost  
+
+---
+
+## Tech Stack
+
+- **Frontend:** React + Vite  
+- **Backend:** Node.js (Express)  
+- **Development approach:** Spec-Driven Development (SDD)  
+- **Tooling:** GitHub Speckit + GitHub Copilot  
+
+---
 
 ## Quick Start
 
 ### Prerequisites
-- Node.js 18+ LTS
-- npm 8+
+- Node.js 18+ LTS  
+- npm 8+  
 
 ### Installation
 
 ```bash
-# From root directory
+# From the root directory
 npm run install-all
-```
-
-### Running the App
-
-```bash
-# From root directory - starts both frontend (port 3000) and backend (port 3001)
 npm run dev
 ```
 
