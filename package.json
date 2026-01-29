@@ -1,0 +1,10 @@
+{
+  "name": "simple-todo-app",
+  "version": "1.0.0",
+  "description": "Simple todo list app with React frontend and Node.js backend",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix backend run dev & npm --prefix frontend run dev",
+    "install-all": "npm install && npm --prefix backend install && npm --prefix frontend install"
+  }
+}

@@ -1,50 +1,52 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# Simple Todo App Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Simplicity First
+Keep the application lean and minimal. Follow YAGNI (You Aren't Gonna Need It) principles. Every feature must have a clear user value; no speculative infrastructure. The app solves one problem: managing a todo list.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Client-Server Separation
+React frontend (presentation layer) and Node.js backend (data/logic layer) must communicate via REST API. Each layer is independently testable and deployable. Clear boundaries with well-defined contracts.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. API-First Design
+All backend functionality exposed via REST endpoints. API contracts defined before implementation. Frontend depends on API contracts, not internal implementation details. Requests/responses use JSON.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. In-Memory Storage
+All data stored in memory only. No database persistence. Data resets when application restarts. Single data store per backend instance (suitable for single-user, localhost environment).
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Test Coverage
+Both frontend (React components) and backend (API endpoints) must have unit tests. Integration tests verify frontend-backend communication. Tests written before or alongside implementation.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Technology Stack
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+- **Frontend**: React 18+ (single-page app)
+- **Backend**: Node.js + Express.js
+- **Data Storage**: In-memory JavaScript objects
+- **Testing**: Jest (backend), React Testing Library (frontend)
+- **HTTP**: REST API (JSON)
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Constraints & Requirements
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+- **Deployment**: Localhost only (development environment)
+- **Users**: Single user, no authentication/authorization required
+- **Persistence**: None (in-memory only)
+- **Scope**: Two core features only:
+  1. Create new todos (with title/description)
+  2. Mark todos complete (toggle status)
+- **Performance**: No specific targets (small scale)
+- **Browser Support**: Modern browsers (Chrome, Firefox, Safari, Edge)
+
+## Development Workflow
+
+1. **Feature Definition**: Spec out todo feature requirements clearly
+2. **API Design**: Define backend endpoint signatures and data models
+3. **Test Writing**: Write tests for both frontend and backend
+4. **Implementation**: Develop features to pass tests
+5. **Integration**: Verify frontend-backend communication works end-to-end
+6. **Code Review**: Verify compliance with constitution before merging
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+The constitution supersedes all other practices. All features must comply with these principles before implementation begins. Amendments require documentation and clear ratification. When in doubt, choose simplicity over flexibility.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-01-29 | **Last Amended**: 2026-01-29
